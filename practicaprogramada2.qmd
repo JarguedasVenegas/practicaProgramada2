@@ -1,0 +1,43 @@
+---
+title: "Practica programada 2 Jessica Arguedas"
+author: "Nayib Vargas"
+format: 
+  html:
+    code-fold: true
+    theme: cosmo
+  pdf: default
+---
+```{python}
+import pandas as pd
+import seaborn as sns
+import matplotlib.pyplot as plt
+
+data = pd.read_csv("./genre_region_totals.csv")
+
+```
+
+
+## Visualización de datos en Seaborn
+
+
+```{python}
+plt.figure(figsize=(10, 6))
+sns.boxplot(x="sales", y="region", data=data)
+plt.title("Distribución de ventas por region")
+plt.show()
+```
+
+
+```{python}
+plt.figure(figsize=(10, 6))
+sns.histplot(data=data, x="sales",kde=True)
+plt.title("Distribución de ventas")
+plt.show()
+```
+
+```{python}
+plt.figure(figsize=(10, 6))
+sns.boxplot(x="genre", y="sales", data=data)
+plt.title("Distribución de ventas por region")
+plt.show()
+```
